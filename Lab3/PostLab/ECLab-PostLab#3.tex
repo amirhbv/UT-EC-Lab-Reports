@@ -1,0 +1,135 @@
+\documentclass{report}
+
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\geometry{
+	top=2cm,
+	bottom=2cm,
+	left=2cm,
+	right=2cm,
+}
+\graphicspath{{./img/}}
+\setlength{\columnseprule}{1pt}
+
+\begin{document}
+    {\large Lab 3: Thevenin Equivalent Circuit; Beyond Parallel and Series }
+    \hfill
+    {\large \textbf{Post-Lab 03-C-03} \par}
+	\vspace{0.1in}
+    {\large AmirHossein Habibvand - 810196447}
+    \hfill
+    \today \par
+    {\large Nima Modares Gorji - 810196558 \par}
+	\vspace{0.5in}
+
+    \section*{Part 1}
+    \begin{multicols}{2}\setlength{\columnseprule}{0pt}
+        \begin{center}
+            \scalebox{0.8}
+            {
+                \renewcommand{\arraystretch}{1.2} % Default value: 1
+                \begin{tabular}{|c|c|c|c|c|}
+                    \hline
+                    \textbf{$R_L(\Omega)$} & \textbf{$V_L(V)$} & \textbf{$P_L(mWatt)$} & \textbf{$R_T(\Omega)$} & \textbf{Comments} \\
+                    \hline
+                    20  & 1.012 & 51.2 & & \\
+                    50  & 2.000 & 80.0 & & \\
+                    100 & 2.988 & 89.2 & & \\
+                    200 & 4.019 & 80.7 & & \\
+                    500 & 5.035 & 50.7 & & \\
+                    \hline
+                    \multicolumn{3}{|r|}{Average $R_T$} & & \\
+                    \hline
+                    \multicolumn{3}{|r|}{Standard deviation for $R_T$} & & \\
+                    \hline
+                \end{tabular}
+            }
+        \end{center}
+        \vfill\null
+        \columnbreak
+        {
+            \setstretch{1.5}
+            $P_L = \frac{V_L^2}{R_L}$.
+
+            $P_L = \frac{1.012^2 V}{20\Omega}  = 0.0512 watt$.
+
+            $P_L = \frac{2.000^2 V}{50\Omega}  = 0.0800 watt$.
+
+            $P_L = \frac{2.988^2 V}{100\Omega} = 0.0892 watt$.
+
+            $P_L = \frac{4.019^2 V}{200\Omega} = 0.0807 watt$.
+
+            $P_L = \frac{5.035^2 V}{500\Omega} = 0.0507 watt$.
+
+        }
+    \end{multicols}
+
+    \section*{Part 2}
+        \begin{center}
+            \renewcommand{\arraystretch}{1.2} % Default value: 1
+            \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                \textbf{Circuit 3} & \textbf{$V_A(V)$} & \textbf{$V_B(V)$} & \textbf{$I_{Total}(mA)$} & \textbf{$R_{eq}(\Omega)$} ohmmeter & \textbf{$R_{eq}(\Omega)$} $V_S/I_{Total}$ \\
+                \hline
+                Theoretical Calculations & 5.71 & 1.38 & 14.9 & 401.471 & - \\
+                Measured & 5.75 & 1.36 & 14.76 & 402.0 & 406.5 \\
+                Difference Percentage & 0.7 & -1.4 & -0.9 & 0.1 & - \\
+                \hline
+            \end{tabular}
+        \end{center}
+        \begin{center}
+            \renewcommand{\arraystretch}{1.2} % Default value: 1
+            \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                \textbf{Circuit 4} & \textbf{$V_A(V)$} & \textbf{$V_B(V)$} & \textbf{$I_{Total}(mA)$} & \textbf{$R_{eq}(\Omega)$} ohmmeter & \textbf{$R_{eq}(\Omega)$} $V_S/I_{Total}$ \\
+                \hline
+                Theoretical Calculations & 4.45 & 4.45 & 34.1 & 175.889 & - \\
+                Measured & 4.47 & 4.47 & 34.5 & 173.0 & 173.9 \\
+                Difference Percentage & 0.4 & 0.4 & 0.1 & 1.6 & - \\
+                \hline
+            \end{tabular}
+        \end{center}
+        \begin{center}
+            \renewcommand{\arraystretch}{1.2} % Default value: 1
+            \begin{tabular}{|c|c|c|c|c|c|c|}
+                \hline
+                \textbf{Circuit 5} & \textbf{$V_A(V)$} & \textbf{$V_B(V)$} & \textbf{$I_5(mA)$} & \textbf{$I_{Total}(mA)$} & \textbf{$R_{eq}(\Omega)$} ohmmeter & \textbf{$R_{eq}(\Omega)$} $V_S/I_{Total}$ \\
+                \hline
+                Theoretical Calculations & 5.15 & 2.76 & -11.9 & 23.6 & 254.756 & - \\
+                Measured & 5.19 & 2.77 & -12.02 & 23.8 & 252.4 & 252.1 \\
+                Difference Percentage & 0.7 & 0.3 & 1.0 & 0.8 & 0.9 & - \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+    \section*{Part 3}
+        {
+            \setstretch{1.5}
+            Theoretical Calculations: $R_X = 8k\Omega$
+
+            Measured: $R_X = 8k\Omega$
+
+            Difference Percentage: $0\%$
+
+        }
+
+    \section*{Part 4}
+        {
+            \setstretch{1.5}
+            Theoretical Calculations: $R_{CD} = 3.14\Omega$
+
+            Measured: $R_{CD} = 3.142\Omega$
+
+            Difference Percentage: $0.08\%$
+
+        }
+\end{document}
